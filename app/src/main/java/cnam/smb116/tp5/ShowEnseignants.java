@@ -2,8 +2,6 @@ package cnam.smb116.tp5;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -12,7 +10,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import cnam.smb116.tp5.DBHelpers.EnseignantsHelper;
+import cnam.smb116.tp5.DBHelper.EnseignantsHelper;
 import cnam.smb116.tp5.Model.Enseignant;
 
 public class ShowEnseignants extends AppCompatActivity {
@@ -27,6 +25,7 @@ public class ShowEnseignants extends AppCompatActivity {
         populateListView();
     }
 
+    // Récupère la liste des enseignants et les affiche dans la ListView de l'IHM via un adapter
     public void populateListView() {
         EnseignantsHelper helper = new EnseignantsHelper(this);
         ArrayList<Enseignant> enseignants = helper.getEnseignants();

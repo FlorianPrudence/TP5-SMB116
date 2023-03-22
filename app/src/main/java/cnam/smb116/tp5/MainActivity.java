@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import cnam.smb116.tp5.DBHelpers.EnseignantsHelper;
+import cnam.smb116.tp5.DBHelper.EnseignantsHelper;
 import cnam.smb116.tp5.Model.Enseignant;
 
 public class MainActivity extends AppCompatActivity {
@@ -42,12 +42,15 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // On créer un objet Enseignant avec les données récupérées de l'IHM puis on l'insert en base
         Enseignant enseignant = new Enseignant(nomInput.getText().toString(), prenomInput.getText().toString(), courrielInput.getText().toString());
         EnseignantsHelper helper = new EnseignantsHelper(this);
-        long inserted = helper.insertEnseignant(enseignant);
-        String toastText = inserted + " ligne inséré en base";
+        long lines = helper.insertEnseignant(enseignant);
+        // On affiche un Toast pour indiquer le succès de l'insertion
+        String toastText = "Ligne insérée, " + lines + " lignes en base";
         Toast.makeText(this, toastText, Toast.LENGTH_SHORT).show();
 
+        // On efface le contenu des EditText dans l'IHM
         nomInput.getText().clear();
         prenomInput.getText().clear();
         courrielInput.getText().clear();
