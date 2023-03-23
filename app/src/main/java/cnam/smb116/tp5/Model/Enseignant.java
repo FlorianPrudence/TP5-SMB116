@@ -6,6 +6,11 @@ public class Enseignant {
     public String Prenom;
     public String Courriel;
 
+    @Override
+    public String toString() {
+        return  Id + "- " + Nom.toUpperCase() + " " + Prenom + ", " + Courriel;
+    }
+
     public Enseignant(int id, String nom, String prenom, String courriel) {
         Id = id;
         Nom = nom;
@@ -19,8 +24,4 @@ public class Enseignant {
         Courriel = courriel;
     }
 
-    @Override
-    public String toString() {
-        return  Id + "- " + Nom.toUpperCase() + " " + Prenom + ", " + Courriel;
-    }
 }

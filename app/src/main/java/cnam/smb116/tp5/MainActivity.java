@@ -56,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
         courrielInput.getText().clear();
     }
 
+    // Démarre la ShowEnseignantsActivity
     public void showEnseignants(View view) {
-        Intent intent = new Intent(MainActivity.this, ShowEnseignants.class);
+        Intent intent = new Intent(MainActivity.this, ShowEnseignantsActivity.class);
         startActivity(intent);
     }
 }

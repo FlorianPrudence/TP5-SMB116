@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import cnam.smb116.tp5.DBHelper.EnseignantsHelper;
 import cnam.smb116.tp5.Model.Enseignant;
 
-public class ShowEnseignants extends AppCompatActivity {
+public class ShowEnseignantsActivity extends AppCompatActivity {
 
     private ListView listView;
 
